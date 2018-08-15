@@ -1,7 +1,7 @@
 <h1>Click a Actor To View Content</h1>
-<%= link_to 'Create a new actor', new_sub_actor_path(@sub) %>
+<%= link_to 'Create a new actor', new_film_actor_path(@film) %>
 <ul>
   <% @actors.each do |actor| %>
-    <li><%= link_to actor.name, [@sub, actor] %></li>
+    <li><%= link_to actor.name, [@film, actor] %></li>
   <% end %>
 </ul>
