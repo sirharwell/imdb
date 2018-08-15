@@ -1,10 +1,9 @@
 <h1>Add A Comment</h1>
 <%= form_for [@actor, @comment] do |f| %>
   <%= f.label :body %>
-  <%= f.text_area :body, required: true %>
-  <br />
+<%= f.text_field :body, :size=>"50", :length=>"20", placeholder: "Make an offer "%>
   <%= f.label :author %>
-  <%= f.text_field :author, placeholder: 'Leave blank for anon' %>
+  <%= f.text_field :author, required: true %>
   <br />
   <%= f.submit %>
 <% end %>

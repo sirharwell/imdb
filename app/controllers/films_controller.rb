@@ -1,8 +1,6 @@
 class FilmsController < ApplicationController
   before_action :set_film, only: [:show, :update, :edit, :destroy]
-  skip_before_action :verify_paid, only: :index
-  after_action :more_cowbell
-  skip_after_action :more_cowbell, only: [:new, :edit]
+
 
   def index
     @films = Film.all
@@ -43,7 +41,7 @@ class FilmsController < ApplicationController
 
   private
     def film_params
-      params.require(:film).permit(:name) 
+      params.require(:film).permit(:name)
     end
 
     def set_film
@@ -55,6 +53,3 @@ class FilmsController < ApplicationController
     end
 
 end
-
-
-

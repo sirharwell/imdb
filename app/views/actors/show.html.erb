@@ -8,5 +8,7 @@
 
 <hr />
 <%= link_to 'Edit Actor', edit_film_actor_path(@film, @actor) %>
+<br />
 <%= link_to 'Delete Actor', [@film, @actor], method: :delete %>
+<br />
 <%= link_to 'Back To Actors', film_actors_path(@film) %>
