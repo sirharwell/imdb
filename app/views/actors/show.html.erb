@@ -1,2 +1,5 @@
-<h1>Actors#show</h1>
-<p>Find me in app/views/actors/show.html.erb</p>
+<h1><%= @film.name %> - <%= @actor.name %></h1>
+<p><%= @actor.body %></p>
+<%= link_to 'Edit Actor', edit_film_actor_path([@film, @actor]) %>
+<%= link_to 'Delete Actor', [@film, @actor], method: :delete %>
+<%= link_to 'Back To Actors', film_actors_path(@film) %>
