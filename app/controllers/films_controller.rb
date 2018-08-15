@@ -1,5 +1,6 @@
 class FilmsController < ApplicationController
   before_action :set_film, only: [:show, :update, :edit, :destroy]
+  before_action :set_actor
 
     def index
       @films = Film.all
