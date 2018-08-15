@@ -1,2 +1,7 @@
-<h1>Actors#index</h1>
-<p>Find me in app/views/actors/index.html.erb</p>
+<h1>Click a Actor To View Content</h1>
+<%= link_to 'Create a new actor', new_sub_actor_path(@sub) %>
+<ul>
+  <% @actors.each do |actor| %>
+    <li><%= link_to actor.name, [@sub, actor] %></li>
+  <% end %>
+</ul>
