@@ -9,11 +9,13 @@ class FilmsController < ApplicationController
     end
 
     def new
-      @film = Film.new
-    end
+  @film = Film.new
+  render partial: "form"
+end
 
-    def edit
-    end
+def edit
+  render partial: "form"
+end
 
     def create
       @film = Film.new(film_params)
