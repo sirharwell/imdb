@@ -1,11 +1,6 @@
 require 'test_helper'
 
 class ActorsControllerTest < ActionDispatch::IntegrationTest
-  test "should get films" do
-    get actors_films_url
-    assert_response :success
-  end
-
   test "should get index" do
     get actors_index_url
     assert_response :success

@@ -1,6 +1,6 @@
 class ActorsController < ApplicationController
   before_action :set_film
-  before_action :set_actor, only: [:show, :edit, :update, :destroy]
+  before_action :set_actor, only: [:show, :edit, :update, :destroy ]
 
   def index
     @actors = @film.actors
@@ -11,18 +11,17 @@ class ActorsController < ApplicationController
 
   def new
     @actor = @film.actors.new
-    render partial: "form"
   end
 
   def edit
-    render partial: "form"
   end
 
   def create
     @actor = @film.actors.new(actor_params)
 
     if @actor.save
-      redirect_to [@film, @actor]
+      redirect_to film_actor_path(@film, @actor)
+      #redirect_to [@film, @actor]
     else
       render :new
     end
@@ -30,7 +29,8 @@ class ActorsController < ApplicationController
 
   def update
     if @actor.update(actor_params)
-      redirect_to [@film, @actor]
+      redirect_to film_actor_path(@film, @actor)
+      #redirect_to [@film, @actor]
     else
       render :edit
     end
@@ -42,6 +42,7 @@ class ActorsController < ApplicationController
   end
 
   private
+
     def set_film
       @film = Film.find(params[:film_id])
     end
@@ -53,4 +54,12 @@ class ActorsController < ApplicationController
     def actor_params
       params.require(:actor).permit(:name, :body)
     end
+
+
+
+
+
+
+
+
 end

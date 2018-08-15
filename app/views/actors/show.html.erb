@@ -1,5 +1,12 @@
 <h1><%= @film.name %> - <%= @actor.name %></h1>
 <p><%= @actor.body %></p>
-<%= link_to 'Edit Actor', edit_film_actor_path([@film, @actor]) %>
+<%= link_to 'Add Comment', new_actor_comment_path(@actor) %>
+
+<% @actor.comments.each_with_index do |c, index| %>
+  <%= render 'comments/comment', { comment: c, i: index + 1, comment_count: @actor.comments.count } %>
+<% end %>
+
+<hr />
+<%= link_to 'Edit Actor', edit_film_actor_path(@film, @actor) %>
 <%= link_to 'Delete Actor', [@film, @actor], method: :delete %>
 <%= link_to 'Back To Actors', film_actors_path(@film) %>

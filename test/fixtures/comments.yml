@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
   body: MyText
-  film: one
+  author: MyString
+  actor: one
 
 two:
-  name: MyString
   body: MyText
-  film: two
+  author: MyString
+  actor: two

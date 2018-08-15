@@ -1,7 +1,9 @@
-<h1>Click a Film To View Content</h1>
-<%= link_to 'Create a new film', new_film_path %>
+<h1>Click a film to view</h1>
+<%= link_to 'Create Film', new_film_path %>
 <ul>
   <% @films.each do |film| %>
-    <li><%= link_to film.name, film %></li>
+    <li>
+      <%= link_to film.name, film %>
+    </li>
   <% end %>
 </ul>

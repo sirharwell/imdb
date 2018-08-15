@@ -1,4 +1,4 @@
 class Actor < ApplicationRecord
-  has_many :films
-  belongs_to :films
+  belongs_to :film
+  has_many :comments, dependent: :destroy
 end
