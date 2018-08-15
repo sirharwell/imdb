@@ -3,6 +3,8 @@
 <p>What would you like to do?</p>
 <%= link_to 'View actors', film_actors_path(@film) %>
 <br />
+<%= link_to 'View all Films', root_path %> 
+<br />
 <%= link_to 'Edit Film', edit_film_path(@film) %>
 <br />
 <%= link_to 'Delete Film', @film, method: :delete %>
