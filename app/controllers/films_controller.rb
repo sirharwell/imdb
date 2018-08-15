@@ -1,13 +1,50 @@
 class FilmsController < ApplicationController
-  def index
-  end
+  before_action :set_film, only: [:show, :update, :edit, :destroy]
 
-  def show
-  end
+    def index
+      @films = Film.all
+    end
 
-  def new
-  end
+    def show
+    end
 
-  def edit
+    def new
+      @film = Film.new
+    end
+
+    def edit
+    end
+
+    def create
+      @film = Film.new(film_params)
+
+      if @film.save
+        redirect_to films_path
+      else
+        render :new
+      end
+    end
+
+    def update
+      if @film.update(film_params)
+        redirect_to @film
+      else
+        render :edit
+      end
+    end
+
+    def destroy
+      @film.destroy
+      redirect_to films_path
+    end
+
+    private
+
+      def set_film
+        @film = Film.find(params[:id])
+      end
+
+      def film_params
+        params.require(:film).permit(:name)
+      end
   end
-end
